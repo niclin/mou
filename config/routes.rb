@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :mou_lists do
-    resources :mou_items
+    resources :mou_items do
+      member do
+        patch :complete
+      end
+    end
   end
 
   root "mou_lists#index"

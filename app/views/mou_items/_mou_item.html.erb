@@ -1,23 +1,29 @@
 <div class="row clearfix">
   <% if mou_item.completed? %>
-    <div class="complete">
-  	  <%= link_to "完成", complete_mou_list_mou_item_path(@mou_list, mou_item.id), method: :patch %>
-    </div>	
     <div class="mou_item">
   	  <p style="opacity: 0.4;"><strike><%= mou_item.content %></strike></p>
+  
+      <%= link_to complete_mou_list_mou_item_path(@mou_list, mou_item.id), method: :patch do %>
+    <i style="opacity: 0.4;" class="fa fa-check"></i>
+      <% end %>
+    &nbsp;|&nbsp;
+  	  <%= link_to mou_list_mou_item_path(@mou_list, mou_item.id), method: :delete, data: { confirm: "Are you sure ?" } do %>
+		<i class="fa fa-trash"></i>
+  	  <% end %>
     </div>
-    <div class="trash">
-  	  <%= link_to "刪除", mou_list_mou_item_path(@mou_list, mou_item.id), method: :delete, data: { confirm: "Are you sure ?" } %>
-    </div>
+    <hr>
   <% else %>
-    <div class="complete">
-  	  <%= link_to "完成", complete_mou_list_mou_item_path(@mou_list, mou_item.id), method: :patch %>
-    </div>	
     <div class="mou_item">
   	  <p><%= mou_item.content %></p>
+      
+    <%= link_to complete_mou_list_mou_item_path(@mou_list, mou_item.id), method: :patch do %>
+    <i class="fa fa-check"></i>
+      <% end %>
+    &nbsp;|&nbsp;
+  	  <%= link_to mou_list_mou_item_path(@mou_list, mou_item.id), method: :delete, data: { confirm: "Are you sure ?" } do %>
+		<i class="fa fa-trash"></i>
+  	  <% end %>
     </div>
-    <div class="trash">
-  	  <%= link_to "刪除", mou_list_mou_item_path(@mou_list, mou_item.id), method: :delete, data: { confirm: "Are you sure ?" } %>
-    </div>
+    <hr>
   <% end %>
 </div>

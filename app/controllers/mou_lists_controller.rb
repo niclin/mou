@@ -56,7 +56,7 @@ class MouListsController < ApplicationController
   def destroy
     @mou_list.destroy
     respond_to do |format|
-      format.html { redirect_to mou_lists_url, notice: 'Mou list was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: 'Mou list was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

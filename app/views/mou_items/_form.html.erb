@@ -1,4 +1,4 @@
 <%= form_for([@mou_list, @mou_list.mou_items.build]) do |f| %>
-  <%= f.text_field :content, placeholder: "New Mou" %>
-  <%= f.submit %>
+  <%= f.text_field :content, placeholder: "新增代辦事項" %>
+  <%= f.submit "送出" %>
 <% end %>

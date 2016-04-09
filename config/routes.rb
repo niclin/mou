@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :mou_lists do
+    resources :mou_items
+  end
+
+  root "mou_lists#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

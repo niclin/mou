@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @mou_list.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @mou_list.description %>
+</p>
+
+<div id="mou_items_wrapper">
+  <%= render @mou_list.mou_items %>
+  <div id="form">
+    <%= render "mou_items/form" %>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_mou_list_path(@mou_list) %> |
+<%= link_to 'Back', mou_lists_path %>

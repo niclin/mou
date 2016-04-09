@@ -1,0 +1,2 @@
+module MouItemsHelper
+end

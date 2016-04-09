@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Mou Lists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mou_lists.each do |mou_list| %>
+      <tr>
+        <td><%= mou_list.title %></td>
+        <td><%= mou_list.description %></td>
+        <td><%= link_to 'Show', mou_list %></td>
+        <td><%= link_to 'Edit', edit_mou_list_path(mou_list) %></td>
+        <td><%= link_to 'Destroy', mou_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mou list', new_mou_list_path %>

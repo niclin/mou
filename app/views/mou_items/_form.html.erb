@@ -1,0 +1,4 @@
+<%= form_for([@mou_list, @mou_list.mou_items.build]) do |f| %>
+  <%= f.text_field :content, placeholder: "New Mou" %>
+  <%= f.submit %>
+<% end %>
